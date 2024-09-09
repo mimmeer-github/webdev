@@ -23,8 +23,6 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-analytics.js";
-        import { getAuth, createUserWithEmailAndPassword } from "./firebase/auth";
-        import { GoogleAuthProvider } from "./firebase/auth";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
         
@@ -44,25 +42,21 @@
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
         const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            // Signed up 
-            const user = userCredential.user;
-            // ...
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // ..
-          });
-        const provider = new GoogleAuthProvider();
-
+        firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
         // Use login
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
         ui.start('#firebaseui-auth-container', {
           signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID
+            firebase.auth.EmailAuthProvider.PROVIDER_ID
           ],
           // Other config options...
         });
