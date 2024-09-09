@@ -8,15 +8,17 @@
 }
 
 :root[data-theme="dark"] {
-  --text:
+  --text: #af8b1d;
   --text-bold: #b7d1e1;
-
   --background: #2f2409;
   --primary: #c3a822;
   --secondary: #f7f1b0;
   --accent: #a77716;
 }
 
+body {
+  color: var(--background);
+}
 
 h1 {
   color: var(--text-bold);
