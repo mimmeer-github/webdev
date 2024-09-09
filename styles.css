@@ -1,6 +1,6 @@
 :root[data-theme="light"] {
-  --text: #6ea3c4;
-  --text-bold: #1e3848;
+  --text: #e2c050;
+  --text-bold: #58470e;
   --background: #f6ebd0;
   --primary: #ddc23c;
   --secondary: #4f4908;
@@ -9,7 +9,7 @@
 
 :root[data-theme="dark"] {
   --text: #af8b1d;
-  --text-bold: #b7d1e1;
+  --text-bold: #f1e0a7;
   --background: #2f2409;
   --primary: #c3a822;
   --secondary: #f7f1b0;
@@ -18,8 +18,17 @@
 
 body {
   color: var(--background);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
   color: var(--text-bold);
+  font-weight: 800;
+}
+
+p {
+  color: var(--text);
 }
