@@ -1,0 +1,23 @@
+:root[data-theme="light"] {
+  --text: #6ea3c4;
+  --text-bold: #1e3848;
+  --background: #f6ebd0;
+  --primary: #ddc23c;
+  --secondary: #4f4908;
+  --accent: #e9b958;
+}
+
+:root[data-theme="dark"] {
+  --text:
+  --text-bold: #b7d1e1;
+
+  --background: #2f2409;
+  --primary: #c3a822;
+  --secondary: #f7f1b0;
+  --accent: #a77716;
+}
+
+
+h1 {
+  color: var(--text-bold);
+}
