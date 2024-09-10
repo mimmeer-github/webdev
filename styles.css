@@ -1,16 +1,16 @@
 :root[data-theme="light"] {
-  --text: #e2c050;
+  --text: #c49e21
   --text-bold: #58470e;
-  --background: #f6ebd0;
+  --background: #f7f4e9;
   --primary: #ddc23c;
   --secondary: #4f4908;
   --accent: #e9b958;
 }
 
 :root[data-theme="dark"] {
-  --text: #af8b1d;
+  --text: #af8d1d;
   --text-bold: #f1e0a7;
-  --background: #2f2409;
+  --background: #161308;
   --primary: #c3a822;
   --secondary: #f7f1b0;
   --accent: #a77716;
