@@ -14,4 +14,8 @@ CSS - CSS is the col<sub>(u)</sub>ors for the websites. It can be basic or advan
 
 ### Medium
 
-JavaScript (JS) - JS is the movement, no web just sits there. It ***does*** stuff.
+JavaScript (JS) - JS is the movement, no website just sits there. It ***does*** stuff.
+
+### Hard
+
+PHP - Not supported by Github pages. - That will be an issue. Oh, fine ***I'll*** make it.
