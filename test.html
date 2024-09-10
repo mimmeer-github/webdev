@@ -1,0 +1,166 @@
+<DOCTYPE html>
+<html>
+<head>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain attribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+</head>
+<body>
+<div w3-include-html="nav.html"></div>
+<div>
+:root[data-theme="light"] {
+  --text-50: #fbf7e9;
+  --text-100: #f8efd3;
+  --text-200: #f1e0a7;
+  --text-300: #ead07b;
+  --text-400: #e2c050;
+  --text-500: #dbb024;
+  --text-600: #af8d1d;
+  --text-700: #846a15;
+  --text-800: #58470e;
+  --text-900: #2c2307;
+  --text-950: #161204;
+
+  --background-50: #fbf6ea;
+  --background-100: #f7edd4;
+  --background-200: #efdba9;
+  --background-300: #e7c97e;
+  --background-400: #deb754;
+  --background-500: #d6a529;
+  --background-600: #ab8421;
+  --background-700: #816318;
+  --background-800: #564210;
+  --background-900: #2b2108;
+  --background-950: #151104;
+
+  --primary-50: #fbf8e9;
+  --primary-100: #f7f1d4;
+  --primary-200: #f0e4a8;
+  --primary-300: #e8d67d;
+  --primary-400: #e0c952;
+  --primary-500: #d9bb26;
+  --primary-600: #ad961f;
+  --primary-700: #827017;
+  --primary-800: #574b0f;
+  --primary-900: #2b2508;
+  --primary-950: #161304;
+
+  --secondary-50: #fdfbe8;
+  --secondary-100: #faf7d1;
+  --secondary-200: #f6efa2;
+  --secondary-300: #f1e774;
+  --secondary-400: #eddf45;
+  --secondary-500: #e8d717;
+  --secondary-600: #baac12;
+  --secondary-700: #8b810e;
+  --secondary-800: #5d5609;
+  --secondary-900: #2e2b05;
+  --secondary-950: #171502;
+
+  --accent-50: #fcf6e8;
+  --accent-100: #f9ecd2;
+  --accent-200: #f3d9a5;
+  --accent-300: #edc678;
+  --accent-400: #e8b34a;
+  --accent-500: #e2a01d;
+  --accent-600: #b58017;
+  --accent-700: #876012;
+  --accent-800: #5a400c;
+  --accent-900: #2d2006;
+  --accent-950: #171003;
+
+}
+:root[data-theme="dark"] {
+  --text-50: #161104;
+  --text-100: #2c2307;
+  --text-200: #58450e;
+  --text-300: #846815;
+  --text-400: #af8b1d;
+  --text-500: #dbad24;
+  --text-600: #e2be50;
+  --text-700: #eace7b;
+  --text-800: #f1dea7;
+  --text-900: #f8efd3;
+  --text-950: #fbf7e9;
+
+  --background-50: #151104;
+  --background-100: #2b2108;
+  --background-200: #564210;
+  --background-300: #816318;
+  --background-400: #ab8421;
+  --background-500: #d6a529;
+  --background-600: #deb754;
+  --background-700: #e7c97e;
+  --background-800: #efdba9;
+  --background-900: #f7edd4;
+  --background-950: #fbf6ea;
+
+  --primary-50: #161304;
+  --primary-100: #2b2508;
+  --primary-200: #574b0f;
+  --primary-300: #827017;
+  --primary-400: #ad961f;
+  --primary-500: #d9bb26;
+  --primary-600: #e0c952;
+  --primary-700: #e8d67d;
+  --primary-800: #f0e4a8;
+  --primary-900: #f7f1d4;
+  --primary-950: #fbf8e9;
+
+  --secondary-50: #171502;
+  --secondary-100: #2e2b05;
+  --secondary-200: #5d5609;
+  --secondary-300: #8b810e;
+  --secondary-400: #baac12;
+  --secondary-500: #e8d717;
+  --secondary-600: #eddf45;
+  --secondary-700: #f1e774;
+  --secondary-800: #f6efa2;
+  --secondary-900: #faf7d1;
+  --secondary-950: #fdfbe8;
+
+  --accent-50: #171003;
+  --accent-100: #2d2006;
+  --accent-200: #5a400c;
+  --accent-300: #876012;
+  --accent-400: #b58017;
+  --accent-500: #e2a01d;
+  --accent-600: #e8b34a;
+  --accent-700: #edc678;
+  --accent-800: #f3d9a5;
+  --accent-900: #f9ecd2;
+  --accent-950: #fcf6e8;
+
+}
+</div>
+<script>
+includeHTML();
+</script>
+</body>
+</html>
